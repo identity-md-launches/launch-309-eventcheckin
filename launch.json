@@ -1,0 +1,22 @@
+{
+  "kind": "evm_project",
+  "token": {
+    "contract": "LaunchToken",
+    "name": "Checkin",
+    "symbol": "CHKN",
+    "decimals": 18
+  },
+  "contracts": [
+    {
+      "contract": "EventCheckin",
+      "constructorArgs": ["$token"]
+    }
+  ],
+  "pool": {
+    "pairedCurrency": "0x0000000000000000000000000000000000000000",
+    "fee": 3000,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "notes": "Sepolia test toy; attendance records are not tickets or credentials. LaunchToken has no constructor arguments. EventCheckin stores the deployed CHKN address immutably, starts unfunded, and needs no initialization calls. Its EIP-712 name EventCheckin and version 1 are source literals. There is no global owner, admin, pause or upgrade path. Funders approve CHKN and call fundEvent; they trust each event's organiser to authorise attendees and reclaim unspent funds. Rewards and reclaimed funds are withdrawn by their credited recipients. The pool pairs with native ETH and has no hook. Services resolve policy and signed artifact linkage, including any policy-derived effective opening price."
+}
